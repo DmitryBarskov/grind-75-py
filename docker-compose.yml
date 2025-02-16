@@ -7,5 +7,7 @@ services:
         GROUP_ID: ${GROUP_ID}
     volumes:
       - .:/grind
+    environment:
+      PYTHONPATH: .packages
     working_dir: /grind
     command: python -c 'print("Hello, world!")'

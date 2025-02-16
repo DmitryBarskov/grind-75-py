@@ -10,4 +10,9 @@ class Solution:
         >>> Solution().twoSum([3,3], 6)
         [0, 1]
         """
-        return []
+        met_before = {}
+        for i, num in enumerate(nums):
+            if target - num in met_before:
+                return [met_before[target - num], i]
+            met_before[num] = i
+        return None
