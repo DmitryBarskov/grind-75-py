@@ -1,0 +1,11 @@
+services:
+  py:
+    build:
+      context: .
+      args:
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
+    volumes:
+      - .:/grind
+    working_dir: /grind
+    command: python -c 'print("Hello, world!")'
