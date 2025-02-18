@@ -15,6 +15,6 @@ build: .env
 	echo "USER_ID=$$(id -u)\nGROUP_ID=$$(id -g)" > .env
 
 src/%: FORCE
-	docker compose run -it --rm py python -m doctest -v $@
+	docker compose run -it --rm py python -m doctest -v $@ | sed -r 's/\x1B\[(;?[0-9]{1,3})+[mGK]//g'
 
 FORCE: ;
