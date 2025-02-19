@@ -38,4 +38,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run doctest
-        run: python -m doctest -v src/
+        run: find src/ -name "*.py" | xargs python -m doctest -v
