@@ -20,6 +20,7 @@ class TreeNode:
         """
         return list(self)
 
+    @staticmethod
     def from_list(l: List[int], index=0) -> Optional['TreeNode']:
         """
         >>> TreeNode.from_list([2]).val
