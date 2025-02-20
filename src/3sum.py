@@ -15,28 +15,29 @@ class Solution:
     >>> sorted(Solution().threeSum([2,-3,0,-2,-5,-5,-4,1,2,-2,2,0,2,-4]))
     [[-4, 2, 2], [-3, 1, 2], [-2, 0, 2]]
     """
+
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         sorted_nums = sorted(nums)
         triplets = []
-        for i in range(len(sorted_nums)):
-            if i > 0 and sorted_nums[i - 1] == sorted_nums[i]:
+        for i, a in enumerate(sorted_nums):
+            if i > 0 and sorted_nums[i - 1] == a:
                 continue
             j = i + 1
             k = len(sorted_nums) - 1
             while j < k:
-                while j < k and j > i + 1 and sorted_nums[j - 1] == sorted_nums[j]:
+                while i + 1 < j < k and sorted_nums[j - 1] == sorted_nums[j]:
                     j += 1
-                while j < k and k < len(sorted_nums) - 1 and sorted_nums[k] == sorted_nums[k + 1]:
+                while j < k < len(sorted_nums) - 1 and sorted_nums[k] == sorted_nums[k + 1]:
                     k -= 1
                 if j >= k:
                     break
-                sum = sorted_nums[i] + sorted_nums[j] + sorted_nums[k]
-                if sum > 0:
+                three_sum = a + sorted_nums[j] + sorted_nums[k]
+                if three_sum > 0:
                     k -= 1
-                elif sum < 0:
+                elif three_sum < 0:
                     j += 1
                 else:
-                    triplets.append([sorted_nums[i], sorted_nums[j], sorted_nums[k]])
+                    triplets.append([a, sorted_nums[j], sorted_nums[k]])
                     j += 1
                     k -= 1
 

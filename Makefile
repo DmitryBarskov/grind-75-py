@@ -4,11 +4,15 @@ sh:
 lint:
 	docker compose run -it --rm py python -m pylint src/
 
+types:
+	docker compose run -it --rm py python -m mypy src/
+
 test:
 	docker compose run -it --rm py sh -c 'find src -name "*.py" | xargs python -m doctest'
 
 build: .env
 	docker compose build
+	docker compose run -it --rm py pip install --upgrade pip -t .packages
 	docker compose run -it --rm py pip install -r ./requirements.txt -t .packages
 
 .env:

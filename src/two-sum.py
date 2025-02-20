@@ -10,8 +10,8 @@ class Solution:
     [0, 1]
     """
 
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        met_before = {}
+    def twoSum(self, nums: List[int], target: int) -> List[int] | None:
+        met_before: dict[int, int] = {}
         for i, num in enumerate(nums):
             if target - num in met_before:
                 return [met_before[target - num], i]
