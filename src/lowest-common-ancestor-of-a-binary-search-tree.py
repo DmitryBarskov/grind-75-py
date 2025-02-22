@@ -30,6 +30,7 @@ class Solution:
         if p.val == q.val:
             return p
         if p.val > q.val:
+            # pylint: disable-next=arguments-out-of-order
             return self.lowestCommonAncestor(root, q, p)
         if p.val <= root.val <= q.val:
             return root
