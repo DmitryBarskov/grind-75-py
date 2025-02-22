@@ -1,7 +1,6 @@
-from tree_node import TreeNode
-
 from typing import Optional
 
+from tree_node import TreeNode
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -31,25 +30,13 @@ class Solution:
 
     def lowestCommonAncestor(
             self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode'
-    ) -> Optional['TreeNode']:
-        return self.recur(root, p, q)[0]
-
-    def recur(
-            self, root: Optional['TreeNode'], p: 'TreeNode', q: 'TreeNode'
-    ) -> tuple[Optional['TreeNode'], int]:
-        """
-        returns (common root if count_of_found_nodes == 2 else None, count_of_found_nodes)
-        """
-        if root is None:
-            return (None, 0)
-
-        found_in_self = 1 if root.val in (p.val, q.val) else 0
-        candidate, found_in_left = self.recur(root.left, p, q)
-        if found_in_left == 2:
-            return (candidate, 2)
-        candidate, found_in_right = self.recur(root.right, p, q)
-        if found_in_right == 2:
-            return (candidate, 2)
-        if found_in_self + found_in_left + found_in_right >= 2:
-            return (root, 2)
-        return (None, found_in_self + found_in_left + found_in_right)
+    ) -> 'TreeNode':
+        if p.val == q.val:
+            return p
+        if p.val > q.val:
+            return self.lowestCommonAncestor(root, q, p)
+        if p.val <= root.val <= q.val:
+            return root
+        if q.val < root.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        return self.lowestCommonAncestor(root.right, p, q)
