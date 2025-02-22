@@ -1,5 +1,3 @@
-from typing import Optional
-
 from tree_node import TreeNode
 
 # Definition for a binary tree node.
@@ -28,9 +26,7 @@ class Solution:
     2
     """
 
-    def lowestCommonAncestor(
-            self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode'
-    ) -> 'TreeNode':
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         if p.val == q.val:
             return p
         if p.val > q.val:
