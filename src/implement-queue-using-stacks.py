@@ -33,4 +33,4 @@ class MyQueue:
         if len(self.out_stack) > 0:
             return
         while len(self.in_stack) > 0:
-                self.out_stack.append(self.in_stack.pop())
+            self.out_stack.append(self.in_stack.pop())
