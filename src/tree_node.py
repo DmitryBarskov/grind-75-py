@@ -29,8 +29,12 @@ class TreeNode:
         True
         >>> TreeNode.from_list([2]).right is None
         True
+        >>> TreeNode.from_list([1, None, 3]).left is None
+        True
+        >>> TreeNode.from_list([1, None, 3]).right.val
+        3
         """
-        if index >= len(l):
+        if index >= len(l) or l[index] is None:
             return None
         return TreeNode(
                 l[index],
