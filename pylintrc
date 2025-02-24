@@ -2,6 +2,7 @@
 
 # Disable these checks to follow leetcode defaults
 disable=
+  duplicate-code,
   invalid-name,
   missing-class-docstring,
   missing-function-docstring,
