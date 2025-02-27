@@ -74,7 +74,6 @@ class Solution:
         max_heap: MyHeap = MyHeap(lambda x, y: y - x)
         for num in nums:
             max_heap.push(num)
-        kth_largest: int = -1
-        for _ in range(k):
+        for _ in range(k - 1):
             kth_largest = max_heap.pop()
-        return kth_largest
+        return max_heap.pop()
