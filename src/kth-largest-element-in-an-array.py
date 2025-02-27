@@ -75,5 +75,5 @@ class Solution:
         for num in nums:
             max_heap.push(num)
         for _ in range(k - 1):
-            kth_largest = max_heap.pop()
+            max_heap.pop()
         return max_heap.pop()
