@@ -28,7 +28,7 @@ class Solution:
 
         def set_level(node, level):
             while len(right_side_view) <= level:
-                right_side_view.append(None)
+                right_side_view.append(-1)
             right_side_view[level] = node.val
 
         self.__breadth_first_search(root, set_level)

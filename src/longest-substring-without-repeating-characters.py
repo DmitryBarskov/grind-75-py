@@ -22,7 +22,7 @@ class Solution:
                 met_one_time.add(char)
 
             while len(met_more_times) > 0:
-                if s[l] in met_more_times: 
+                if s[l] in met_more_times:
                     met_more_times[s[l]] -= 1
                     if met_more_times[s[l]] == 0:
                         met_more_times.pop(s[l])

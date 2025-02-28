@@ -5,7 +5,7 @@ lint:
 	docker compose run -it --rm py python -m pylint src/
 
 types:
-	docker compose run -it --rm py python -m mypy src/
+	docker compose run -it --rm py python -m mypy --check-untyped-defs src/
 
 test:
 	docker compose run -it --rm py sh -c 'find src -name "*.py" | xargs python -m doctest'

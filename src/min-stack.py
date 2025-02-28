@@ -1,3 +1,5 @@
+from typing import List
+
 class MinStack:
     """
     >>> obj = MinStack()
@@ -16,8 +18,8 @@ class MinStack:
     __slots__ = ('_mins', '_stack')
 
     def __init__(self):
-        self._mins: list = []
-        self._stack: list = []
+        self._mins: List[int] = []
+        self._stack: List[int] = []
 
     def push(self, val: int) -> None:
         if len(self) > 0:

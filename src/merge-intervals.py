@@ -18,15 +18,15 @@ class Solution:
         return merged
 
     def __are_intersecting(
-            self, interval_1: List[List[int]], interval_2: List[List[int]]
+            self, interval_1: List[int], interval_2: List[int]
     ) -> bool:
         a, b = interval_1
         c, d = interval_2
         return a <= c <= b or a <= d <= b or c <= a <= d or c <= b <= d
 
     def __merge(
-            self, interval_1: List[List[int]], interval_2: List[List[int]]
-    ) -> List[List[int]]:
+            self, interval_1: List[int], interval_2: List[int]
+    ) -> List[int]:
         return [
             min(interval_1[0], interval_2[0]),
             max(interval_1[1], interval_2[1])
