@@ -44,4 +44,3 @@ class Node:
         for node_val, neighbors in adj_dict.items():
             adj_list[node_val - 1] = sorted(neighbors)
         return adj_list
-

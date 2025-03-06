@@ -1,15 +1,7 @@
-from graph_node import Node
-
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, val = 0, neighbors = None):
-        self.val = val
-        self.neighbors = neighbors if neighbors is not None else []
-"""
-
 from typing import Dict, Optional, Set
 from collections import deque
+
+from graph_node import Node
 
 class Solution:
     """
