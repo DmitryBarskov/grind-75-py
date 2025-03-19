@@ -13,6 +13,7 @@ class TreeNode:
 
     def to_list(self) -> List[int]:
         """
+        BFS of the tree
         >>> TreeNode(1, TreeNode(2), TreeNode(3, TreeNode(4))).to_list()
         [1, 2, 3, 4]
         >>> TreeNode(1, TreeNode(2, TreeNode(5)), TreeNode(3, TreeNode(4))).to_list()
